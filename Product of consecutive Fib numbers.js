@@ -24,15 +24,15 @@
 
 function productFib(prod) {
   let a = 0,
-    b = 1
+    b = 1;
 
   while (a * b < prod) {
-    const next = a + b
-    a = b
-    b = next
+    const next = a + b;
+    a = b;
+    b = next;
   }
 
-  return [a, b, a * b === prod]
+  return [a, b, a * b === prod];
 }
 
 const testCases = [
@@ -43,11 +43,11 @@ const testCases = [
   [193864606, [10946, 17711, true]],
   [447577, [610, 987, false]],
   [602070, [610, 987, true]],
-]
+];
 
-const test = testCases.every(([prod, result]) => productFib(prod).join() === result.join())
+const test = testCases.every(([prod, result]) => productFib(prod).join() === result.join());
 if (test) {
-  console.log('%cTest passed', 'color: green; font-weight: bold;')
+  console.log('%cTest passed', 'color: green; font-weight: bold;');
 } else {
-  console.error('Test failed')
+  console.error('Test failed');
 }

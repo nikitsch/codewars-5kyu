@@ -23,23 +23,23 @@
 
 function orderWeight(strng: string): string {
   const object = strng.split(' ').reduce((acc: { [key: number]: string[] }, cur: string) => {
-    const key: number = cur.split('').reduce((sum, el) => sum + +el, 0)
-    const value: string[] = key in acc ? [...acc[key], cur].sort() : [cur]
+    const key: number = cur.split('').reduce((sum, el) => sum + +el, 0);
+    const value: string[] = key in acc ? [...acc[key], cur].sort() : [cur];
 
-    return { ...acc, [key]: value }
-  }, {})
+    return { ...acc, [key]: value };
+  }, {});
 
-  return Object.values(object).flat().join(' ')
+  return Object.values(object).flat().join(' ');
 }
 
 const testCases: Array<string[]> = [
   ['103 123 4444 99 2000', '2000 103 123 4444 99'],
   ['2000 10003 1234000 44444444 9999 11 11 22 123', '11 11 2000 10003 22 123 1234000 44444444 9999'],
-]
+];
 
-const test = testCases.every(([str, result]) => orderWeight(str) === result)
+const test = testCases.every(([str, result]) => orderWeight(str) === result);
 if (test) {
-  console.log('%cTest passed', 'color: green; font-weight: bold;')
+  console.log('%cTest passed', 'color: green; font-weight: bold;');
 } else {
-  console.error('Test failed')
+  console.error('Test failed');
 }

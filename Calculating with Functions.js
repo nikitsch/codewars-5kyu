@@ -15,72 +15,72 @@
 // eight(dividedBy(three()));
 
 function zero(arg) {
-  return calculat(arg, 0)
+  return calculat(arg, 0);
 }
 function one(arg) {
-  return calculat(arg, 1)
+  return calculat(arg, 1);
 }
 function two(arg) {
-  return calculat(arg, 2)
+  return calculat(arg, 2);
 }
 function three(arg) {
-  return calculat(arg, 3)
+  return calculat(arg, 3);
 }
 function four(arg) {
-  return calculat(arg, 4)
+  return calculat(arg, 4);
 }
 function five(arg) {
-  return calculat(arg, 5)
+  return calculat(arg, 5);
 }
 function six(arg) {
-  return calculat(arg, 6)
+  return calculat(arg, 6);
 }
 function seven(arg) {
-  return calculat(arg, 7)
+  return calculat(arg, 7);
 }
 function eight(arg) {
-  return calculat(arg, 8)
+  return calculat(arg, 8);
 }
 function nine(arg) {
-  return calculat(arg, 9)
+  return calculat(arg, 9);
 }
 
 function calculat(arg, num) {
-  if (!arg) return num
-  const [sign, operand] = arg
+  if (!arg) return num;
+  const [sign, operand] = arg;
 
-  let result
+  let result;
   switch (sign) {
     case '+':
-      result = num + operand
-      break
+      result = num + operand;
+      break;
     case '-':
-      result = num - operand
-      break
+      result = num - operand;
+      break;
     case '*':
-      result = num * operand
-      break
+      result = num * operand;
+      break;
     case '/':
-      result = Math.floor(num / operand)
-      break
+      result = Math.floor(num / operand);
+      break;
     default:
-      console.log('Неизвестный оператор')
+      console.log('Неизвестный оператор');
   }
 
-  return result
+  return result;
 }
 
 function plus(operand) {
-  return ['+', operand]
+  return ['+', operand];
 }
 function minus(operand) {
-  return ['-', operand]
+  return ['-', operand];
 }
 function times(operand) {
-  return ['*', operand]
+  return ['*', operand];
 }
 function dividedBy(operand) {
-  return ['/', operand]
+  return ['/', operand];
 }
 
 const testCases = [
@@ -89,10 +89,10 @@ const testCases = [
   [eight(minus(three())), 5],
   [six(dividedBy(two())), 3],
   [zero(times(one())), 0],
-]
-const test = testCases.every(([func, result]) => func === result)
+];
+const test = testCases.every(([func, result]) => func === result);
 if (test) {
-  console.log('%cTest passed', 'color: green; font-weight: bold;')
+  console.log('%cTest passed', 'color: green; font-weight: bold;');
 } else {
-  console.log('%cTest failed', 'color: red; font-weight: bold;')
+  console.log('%cTest failed', 'color: red; font-weight: bold;');
 }

@@ -14,15 +14,15 @@
 // Hint: You're not meant to calculate the factorial. Find another way to find the number of zeros.
 
 function zeros(n) {
-  let count = 0
-  let i = 5
+  let count = 0;
+  let i = 5;
 
   while (n >= i) {
-    count += Math.floor(n / i)
-    i *= 5
+    count += Math.floor(n / i);
+    i *= 5;
   }
 
-  return count
+  return count;
 }
 
 const testCases = [
@@ -30,10 +30,10 @@ const testCases = [
   [5, 1],
   [6, 1],
   [30, 7],
-]
-const test = testCases.every(([n, result]) => zeros(n) === result)
+];
+const test = testCases.every(([n, result]) => zeros(n) === result);
 if (test) {
-  console.log('%cTest passed', 'color: green; font-weight: bold;')
+  console.log('%cTest passed', 'color: green; font-weight: bold;');
 } else {
-  console.log('%cTest failed', 'color: red; font-weight: bold;')
+  console.log('%cTest failed', 'color: red; font-weight: bold;');
 }
