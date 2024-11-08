@@ -41,8 +41,8 @@
 // This kata is inspired by A Simple Postfix Language.
 
 const start = (func) => {
-  const stack = [];
-  return func(stack);
+  const stack = []
+  return func(stack)
 }
 
 const push = (stack) => {
@@ -52,38 +52,39 @@ const push = (stack) => {
 }
 
 const add = (stack) => {
-  const result = stack.pop() + stack.pop(); 
-  return (func) => func([...stack, result]);
+  const result = stack.pop() + stack.pop()
+  return (func) => func([...stack, result])
 }
 
 const sub = (stack) => {
-  const result = stack.pop() - stack.pop();
-  return (func) => func([...stack, result]);
+  const result = stack.pop() - stack.pop()
+  return (func) => func([...stack, result])
 }
 
 const div = (stack) => {
-  const divides = stack.pop() / stack.pop();
-  const result = divides >= 0 ? Math.floor(divides) : Math.ceil(divides);
-  return (func) => func([...stack, result]);
+  const divides = stack.pop() / stack.pop()
+  const result = divides >= 0 ? Math.floor(divides) : Math.ceil(divides)
+  return (func) => func([...stack, result])
 }
 
 const mul = (stack) => {
-  const result = stack.pop() * stack.pop();
-  return (func) => func([...stack, result]);
+  const result = stack.pop() * stack.pop()
+  return (func) => func([...stack, result])
 }
 
-const end = (stack) => stack.pop();
+const end = (stack) => stack.pop()
 
 const testCases = [
-  [(start)(push)(5)(push)(3)(add)(end), 8],
-  [(start)(push)(2)(push)(5)(div)(push)(3)(push)(8)(mul)(mul)(end), 48],
-  [(start)(push)(4)(push)(9)(div)(end), 2],
-  [(start)(push)(5)(push)(8)(push)(1)(add)(add)(end), 14]
-];
+  [start(push)(5)(push)(3)(add)(end), 8],
+  [start(push)(2)(push)(5)(div)(push)(3)(push)(8)(mul)(mul)(end), 48],
+  [start(push)(4)(push)(9)(div)(end), 2],
+  [start(push)(5)(push)(8)(push)(1)(add)(add)(end), 14],
+  [start(push)(5)(push)(12)(sub)(end), 7],
+]
 
-const test = testCases.every(([func, result]) => func === result);
+const test = testCases.every(([func, result]) => func === result)
 if (test) {
-  console.log('%cTest passed', 'color: green; font-weight: bold;');
+  console.log('%cTest passed', 'color: green; font-weight: bold;')
 } else {
-  console.error('Test failed');
+  console.error('Test failed')
 }
